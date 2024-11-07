@@ -1,0 +1,83 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Heart Shape */
+  .heart {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: rotate(-45deg);
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    animation: float 5s ease-in-out infinite;
+  }
+  
+  /* Heart Before & After for Rounded Lobes */
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  
+  /* Position the Lobes */
+  .heart::before {
+    top: -50px;
+    left: 0;
+  }
+  
+  .heart::after {
+    left: 50px;
+    top: 0;
+  }
+  
+  /* Floating Animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+    }
+    50% {
+      transform: translate(-45%, -55%) rotate(-45deg) scale(1.1);
+    }
+  }
+  
+  /* Message Text Styling */
+  .message {
+    position: absolute;
+    top: 60%;
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    animation: fadeInOut 5s ease-in-out infinite;
+    font-weight: bold;
+  }
+  
+  /* Fade-in and Out Animation */
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
